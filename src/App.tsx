@@ -5,6 +5,7 @@ import Book from './Book/Book'
 import AddBook from './Book/AddBook'
 import Counter from './Counter/Counter'
 import Home from './Home'
+import Company from './Company/Company'
 
 function App() {
   const router = createBrowserRouter([
@@ -24,6 +25,10 @@ function App() {
       path: "/addbook",
       element: (<AddBook/>),
     },
+    {
+    path: "/companies",
+    element: (<Company/>),
+  }
   ])
 
   return (

@@ -6,6 +6,8 @@ const Home = () => {
     <button><Link to={"/counter"}>counter</Link></button> 
     <button> <Link to={"/books"}>books</Link></button> 
    <button><Link to={"/addbook"}>AddBook</Link></button> 
+   <button><Link to={"/companies"}>Companies</Link></button> 
+
     
     </>
   )

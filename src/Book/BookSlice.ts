@@ -14,8 +14,8 @@ export interface BookInitialStateType{
   
 const initialState:BookInitialStateType = {
     books:[
-    {id:1, title:'thelord', author:'ram'},
-    {id:2, title:'thelord', author:'ram'}
+    {id:1, title:'The lord', author:'ramia'},
+    {id:2, title:'The lord', author:'ramia2'}
 ]}
 
 const booksSlice = createSlice({
@@ -31,10 +31,18 @@ const booksSlice = createSlice({
             state.books = state.books.filter(book => book.id != id)
             console.log(action.payload);  
         },
+        updateBook:(state,action) =>{
+            const {id}  = action.payload as BookType
+            const bookExist = state.books.find(book => book.id == id) as BookType
+            if(bookExist){
+                bookExist.title = action.payload.title;
+                bookExist.author = action.payload.author
+            }
+        }
 
     }
 })
 
 
-export const {addBook,deleteBook} = booksSlice.actions
+export const {addBook,deleteBook,updateBook} = booksSlice.actions
 export default booksSlice.reducer
